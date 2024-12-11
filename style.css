@@ -3,17 +3,110 @@
     padding: 0;
     box-sizing: border-box;
     line-height: 1.5;
-    --main-Dark-Color:#020b00;
+    --main-Dark-Color:#450764;
+    --main-light-color:#a432c7;
+    --main-dark-outline:#4507641c;
+    /* --main-Dark-Color:#020b00; */
 }
 body{
     text-align: center;
     background-color:var(--main-Dark-Color);
     color: #fff;
- 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+
+}
+.display{
+    position: absolute;
+    top: -10%;
+}
+.displayWinner{
+    width: 300px;
+    background-color: var(--main-light-color);
+    height: 100px;
+    
+    top: 0;
+    z-index: 5;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header{
+    position: relative;
+    height: 200px;
+    width: 100%;
+    max-width: 600px;
+    
+
+    .players{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        background-color: #fff;
+        color: var(--main-Dark-Color);
+        padding: 15px 50px;
+        margin: 20px 0;
+        border-radius: 10px;
+        font-family: sans-serif;
+        /* position: sticky; */
+        top: 0;
+        left: 0;
+    }
+    span.name{
+        font-size: 1.2rem;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 }
 h1{
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1.5px;
     padding-bottom: 10px;
 
+}
+.gameboard{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(70px,100px));
+    grid-template-rows: repeat(3,minmax(70px,100px));
+    gap: 5px;
+    padding: 15px;
+    background-color: #fff;
+    /* width: clamp(300px,50%,500px); */
+    border-radius: 15px;
+    /* height: 200px; */
+
+    .card{
+        background-color: #eee;
+        border-radius: 5px;
+        color: var(--main-Dark-Color);
+        font-size: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 0;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-shadow: 1px 1px 30px  var(--main-light-color);
+        cursor: pointer;
+        text-transform: uppercase;
+        
+
+    &:hover{
+        /* transform: scale(1.07); */
+        box-shadow: 1px 1px 1px rgba(86, 53, 53, 0.267);
+        color: var(--main-light-color);
+        outline: 0.4px solid var(--main-dark-outline);
+        outline-offset: 2px;
+    }
+    }
 }
